@@ -7,7 +7,11 @@ const loadJoke = async () => {
             }
         })
         const jokeData = await chuckNorrisIsFetch.json();
-        document.getElementById('loadingJoke').innerHTML  = jokeData.value;
+        const joke = jokeData.value;
+        
+        const formattedJoke = `<p style = "font-size: 30px;line-height: 28px; color: #333; text-align: center;">${joke}</p>`;
+       
+        document.getElementById('loadingJoke').innerHTML  = formattedJoke;
     } catch (error) {
        console.log(error) 
     }
